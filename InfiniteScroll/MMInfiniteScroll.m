@@ -52,7 +52,7 @@
     [self.containerView setUserInteractionEnabled:NO];
     
     // hide horizontal scroll indicator so our recentering trick is not revealed
-    [self setShowsHorizontalScrollIndicator:YES];
+    [self setShowsHorizontalScrollIndicator:NO];
 }
 
 /*

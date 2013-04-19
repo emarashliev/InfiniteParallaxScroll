@@ -88,7 +88,7 @@ enum MMInfiniteScrollDirection {
         self.scrollDirection = MMInfiniteScrollDirectionLeft;
     }
     
-    [self.backScrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
+    [self.backScrollView setContentOffset:CGPointMake(0.5 * scrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
     self.lastPosition = self.frontScrollView.contentOffset.x;
 }
 
