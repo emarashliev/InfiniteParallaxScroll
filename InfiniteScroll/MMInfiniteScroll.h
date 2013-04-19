@@ -18,7 +18,7 @@
 
 @interface MMInfiniteScroll : UIScrollView <UIScrollViewDelegate>
 
-@property (assign, nonatomic) id<MMInfiniteScrollDelegate> delegate;
+//@property (assign, nonatomic) id<MMInfiniteScrollDelegate> delegate;
 @property (strong, nonatomic) NSArray *images;
 @property (assign, nonatomic) CGSize imagesSize;
 

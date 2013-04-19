@@ -60,7 +60,7 @@ enum MMInfiniteScrollDirection {
     self.frontScrollView = [[MMInfiniteScroll alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     self.backScrollView = [[MMInfiniteScroll alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     
-    self.backScrollView.images = @[@"aluminum", @"gold", @"rainbow"];
+    self.backScrollView.images = @[@"aluminum", @"gold", @"rainbow", @"applelogo"];
     self.frontScrollView.images = @[@"steve1.jpg", @"steve2.jpg", @"steve3.jpeg", @"steve4.jpg"];
     [self addSubview:self.backScrollView];
     [self addSubview:self.frontScrollView];
@@ -82,13 +82,16 @@ enum MMInfiniteScrollDirection {
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+//    NSLog(@"%f", scrollView.contentOffset.x);
     if (self.lastPosition > scrollView.contentOffset.x) {
         self.scrollDirection = MMInfiniteScrollDirectionRight;
+//        NSLog(@"Right");
     }else if (self.lastPosition < scrollView.contentOffset.x){
         self.scrollDirection = MMInfiniteScrollDirectionLeft;
+//        NSLog(@"Left");
     }
     
-    [self.backScrollView setContentOffset:CGPointMake(0.5 * scrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
+    [self.backScrollView setContentOffset:CGPointMake(0.7 * scrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
     self.lastPosition = self.frontScrollView.contentOffset.x;
 }
 

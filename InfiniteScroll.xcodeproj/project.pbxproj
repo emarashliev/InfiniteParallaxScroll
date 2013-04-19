@@ -14,6 +14,7 @@
 		579245C417217E34006CEFD4 /* steve2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 579245C017217E34006CEFD4 /* steve2.jpg */; };
 		579245C517217E34006CEFD4 /* steve3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 579245C117217E34006CEFD4 /* steve3.jpeg */; };
 		579245C617217E34006CEFD4 /* steve4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 579245C217217E34006CEFD4 /* steve4.jpg */; };
+		579245CA17219FBD006CEFD4 /* applelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 579245C917219FBD006CEFD4 /* applelogo.png */; };
 		57999858171FF77100D9F1C1 /* MMInfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 57999857171FF77100D9F1C1 /* MMInfiniteScroll.m */; };
 		5799985D1720413A00D9F1C1 /* MMParallaxScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799985C1720413A00D9F1C1 /* MMParallaxScroll.m */; };
 		57A7D1EF171F0F1D0014B777 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A7D1EE171F0F1D0014B777 /* UIKit.framework */; };
@@ -37,6 +38,7 @@
 		579245C017217E34006CEFD4 /* steve2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steve2.jpg; sourceTree = "<group>"; };
 		579245C117217E34006CEFD4 /* steve3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steve3.jpeg; sourceTree = "<group>"; };
 		579245C217217E34006CEFD4 /* steve4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steve4.jpg; sourceTree = "<group>"; };
+		579245C917219FBD006CEFD4 /* applelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = applelogo.png; sourceTree = "<group>"; };
 		57999856171FF77100D9F1C1 /* MMInfiniteScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInfiniteScroll.h; sourceTree = "<group>"; };
 		57999857171FF77100D9F1C1 /* MMInfiniteScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInfiniteScroll.m; sourceTree = "<group>"; };
 		5799985B1720413A00D9F1C1 /* MMParallaxScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMParallaxScroll.h; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				579245B917215918006CEFD4 /* aluminum.png */,
 				579245BA17215918006CEFD4 /* gold.png */,
 				579245BB17215918006CEFD4 /* rainbow.png */,
+				579245C917219FBD006CEFD4 /* applelogo.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				579245C417217E34006CEFD4 /* steve2.jpg in Resources */,
 				579245C517217E34006CEFD4 /* steve3.jpeg in Resources */,
 				579245C617217E34006CEFD4 /* steve4.jpg in Resources */,
+				579245CA17219FBD006CEFD4 /* applelogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
