@@ -9,10 +9,13 @@
 #import "MMInfiniteScroll.h"
 
 
+
+
 @interface MMInfiniteScroll ()
 
 @property (strong, nonatomic) NSMutableArray *visibleViews;
 @property (strong, nonatomic) UIView *containerView;
+@property (assign, nonatomic) NSInteger counter;
 
 @end
 
@@ -23,28 +26,33 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        [self _init];
     }
     return self;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if ((self = [super initWithCoder:aDecoder])) {
-        self.contentSize = CGSizeMake(5000, self.frame.size.width - 20);
-        
-        self.visibleViews = [[NSMutableArray alloc] init];
-        
-        self.containerView = [[UIView alloc] init];
-        self.containerView.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
-        self.containerView.backgroundColor = [UIColor clearColor];
-        [self addSubview:self.containerView];
-        
-        [self.containerView setUserInteractionEnabled:NO];
-        
-        // hide horizontal scroll indicator so our recentering trick is not revealed
-        [self setShowsHorizontalScrollIndicator:YES];
+        [self _init];
     }
     return self;
+}
+
+- (void)_init
+{
+    self.counter = 0;
+    self.contentSize = CGSizeMake(5000, self.frame.size.height);
+    self.visibleViews = [[NSMutableArray alloc] init];
+    
+    self.containerView = [[UIView alloc] init];
+    self.containerView.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
+    self.containerView.backgroundColor = [UIColor clearColor];
+    [self addSubview:self.containerView];
+    
+    [self.containerView setUserInteractionEnabled:NO];
+    
+    // hide horizontal scroll indicator so our recentering trick is not revealed
+    [self setShowsHorizontalScrollIndicator:YES];
 }
 
 /*
@@ -98,9 +106,25 @@
 
 #pragma mark - Tiling
 
+- (UIView *)insertView
+{
+    NSString *imageName = [self.images objectAtIndex:(self.counter % self.images.count)];
+    UIImage *image = [UIImage imageNamed:imageName];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    imageView.image = image;
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    imageView.center = view.center;
+   
+    [view addSubview:imageView];
+    
+    self.counter++;
+    return view;
+}
+
 - (CGFloat)placeNewViewOnRight:(CGFloat)rightEdge
 {
-    UIView *view = [self.delegate insertView];
+    UIView *view = [self insertView];
     [self.containerView addSubview:view];
     [self.visibleViews addObject:view];
     
@@ -114,7 +138,7 @@
 
 - (CGFloat)placeNewViewOnLeft:(CGFloat)leftEdge
 {
-    UIView *view = [self.delegate insertView];
+    UIView *view = [self insertView];
     [self.containerView addSubview:view];
     [self.visibleViews insertObject:view atIndex:0];
     

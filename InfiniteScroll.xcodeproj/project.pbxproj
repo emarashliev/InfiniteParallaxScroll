@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		579245BC17215918006CEFD4 /* aluminum.png in Resources */ = {isa = PBXBuildFile; fileRef = 579245B917215918006CEFD4 /* aluminum.png */; };
+		579245BD17215918006CEFD4 /* gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 579245BA17215918006CEFD4 /* gold.png */; };
+		579245BE17215918006CEFD4 /* rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 579245BB17215918006CEFD4 /* rainbow.png */; };
+		579245C317217E34006CEFD4 /* steve1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 579245BF17217E34006CEFD4 /* steve1.jpg */; };
+		579245C417217E34006CEFD4 /* steve2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 579245C017217E34006CEFD4 /* steve2.jpg */; };
+		579245C517217E34006CEFD4 /* steve3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 579245C117217E34006CEFD4 /* steve3.jpeg */; };
+		579245C617217E34006CEFD4 /* steve4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 579245C217217E34006CEFD4 /* steve4.jpg */; };
 		57999858171FF77100D9F1C1 /* MMInfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 57999857171FF77100D9F1C1 /* MMInfiniteScroll.m */; };
-		5799985A1720398700D9F1C1 /* rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 579998591720398700D9F1C1 /* rainbow.png */; };
+		5799985D1720413A00D9F1C1 /* MMParallaxScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 5799985C1720413A00D9F1C1 /* MMParallaxScroll.m */; };
 		57A7D1EF171F0F1D0014B777 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A7D1EE171F0F1D0014B777 /* UIKit.framework */; };
 		57A7D1F1171F0F1D0014B777 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A7D1F0171F0F1D0014B777 /* Foundation.framework */; };
 		57A7D1F3171F0F1D0014B777 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A7D1F2171F0F1D0014B777 /* CoreGraphics.framework */; };
@@ -23,9 +30,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		579245B917215918006CEFD4 /* aluminum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aluminum.png; sourceTree = "<group>"; };
+		579245BA17215918006CEFD4 /* gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gold.png; sourceTree = "<group>"; };
+		579245BB17215918006CEFD4 /* rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rainbow.png; sourceTree = "<group>"; };
+		579245BF17217E34006CEFD4 /* steve1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steve1.jpg; sourceTree = "<group>"; };
+		579245C017217E34006CEFD4 /* steve2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steve2.jpg; sourceTree = "<group>"; };
+		579245C117217E34006CEFD4 /* steve3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steve3.jpeg; sourceTree = "<group>"; };
+		579245C217217E34006CEFD4 /* steve4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steve4.jpg; sourceTree = "<group>"; };
 		57999856171FF77100D9F1C1 /* MMInfiniteScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMInfiniteScroll.h; sourceTree = "<group>"; };
 		57999857171FF77100D9F1C1 /* MMInfiniteScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMInfiniteScroll.m; sourceTree = "<group>"; };
-		579998591720398700D9F1C1 /* rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rainbow.png; sourceTree = "<group>"; };
+		5799985B1720413A00D9F1C1 /* MMParallaxScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMParallaxScroll.h; sourceTree = "<group>"; };
+		5799985C1720413A00D9F1C1 /* MMParallaxScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMParallaxScroll.m; sourceTree = "<group>"; };
 		57A7D1EB171F0F1D0014B777 /* InfiniteScroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A7D1EE171F0F1D0014B777 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		57A7D1F0171F0F1D0014B777 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +73,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		579245B817215909006CEFD4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				579245BF17217E34006CEFD4 /* steve1.jpg */,
+				579245C017217E34006CEFD4 /* steve2.jpg */,
+				579245C117217E34006CEFD4 /* steve3.jpeg */,
+				579245C217217E34006CEFD4 /* steve4.jpg */,
+				579245B917215918006CEFD4 /* aluminum.png */,
+				579245BA17215918006CEFD4 /* gold.png */,
+				579245BB17215918006CEFD4 /* rainbow.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		57A7D1E2171F0F1D0014B777 = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +117,7 @@
 		57A7D1F4171F0F1D0014B777 /* InfiniteScroll */ = {
 			isa = PBXGroup;
 			children = (
-				579998591720398700D9F1C1 /* rainbow.png */,
+				579245B817215909006CEFD4 /* Images */,
 				57A7D1FD171F0F1D0014B777 /* MMAppDelegate.h */,
 				57A7D1FE171F0F1D0014B777 /* MMAppDelegate.m */,
 				57A7D206171F0F1D0014B777 /* MainStoryboard.storyboard */,
@@ -97,6 +126,8 @@
 				57A7D1F5171F0F1D0014B777 /* Supporting Files */,
 				57999856171FF77100D9F1C1 /* MMInfiniteScroll.h */,
 				57999857171FF77100D9F1C1 /* MMInfiniteScroll.m */,
+				5799985B1720413A00D9F1C1 /* MMParallaxScroll.h */,
+				5799985C1720413A00D9F1C1 /* MMParallaxScroll.m */,
 			);
 			path = InfiniteScroll;
 			sourceTree = "<group>";
@@ -172,7 +203,13 @@
 				57A7D203171F0F1D0014B777 /* Default@2x.png in Resources */,
 				57A7D205171F0F1D0014B777 /* Default-568h@2x.png in Resources */,
 				57A7D208171F0F1D0014B777 /* MainStoryboard.storyboard in Resources */,
-				5799985A1720398700D9F1C1 /* rainbow.png in Resources */,
+				579245BC17215918006CEFD4 /* aluminum.png in Resources */,
+				579245BD17215918006CEFD4 /* gold.png in Resources */,
+				579245BE17215918006CEFD4 /* rainbow.png in Resources */,
+				579245C317217E34006CEFD4 /* steve1.jpg in Resources */,
+				579245C417217E34006CEFD4 /* steve2.jpg in Resources */,
+				579245C517217E34006CEFD4 /* steve3.jpeg in Resources */,
+				579245C617217E34006CEFD4 /* steve4.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +224,7 @@
 				57A7D1FF171F0F1D0014B777 /* MMAppDelegate.m in Sources */,
 				57A7D20B171F0F1D0014B777 /* MMViewController.m in Sources */,
 				57999858171FF77100D9F1C1 /* MMInfiniteScroll.m in Sources */,
+				5799985D1720413A00D9F1C1 /* MMParallaxScroll.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
