@@ -21,5 +21,6 @@
 //@property (assign, nonatomic) id<MMInfiniteScrollDelegate> delegate;
 @property (strong, nonatomic) NSArray *images;
 @property (assign, nonatomic) CGSize imagesSize;
+@property (assign, nonatomic) BOOL isFrontScroll;
 
 @end

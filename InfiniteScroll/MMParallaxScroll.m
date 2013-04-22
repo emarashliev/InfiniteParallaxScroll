@@ -65,6 +65,7 @@ enum MMInfiniteScrollDirection {
     [self addSubview:self.backScrollView];
     [self addSubview:self.frontScrollView];
     self.frontScrollView.delegate = self;
+    self.frontScrollView.isFrontScroll = YES;
 
 }
 
@@ -82,16 +83,16 @@ enum MMInfiniteScrollDirection {
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-//    NSLog(@"%f", scrollView.contentOffset.x);
+    NSLog(@"%f", scrollView.contentOffset.x);
     if (self.lastPosition > scrollView.contentOffset.x) {
         self.scrollDirection = MMInfiniteScrollDirectionRight;
-//        NSLog(@"Right");
+        NSLog(@"Right");
     }else if (self.lastPosition < scrollView.contentOffset.x){
         self.scrollDirection = MMInfiniteScrollDirectionLeft;
-//        NSLog(@"Left");
+        NSLog(@"Left");
     }
     
-    [self.backScrollView setContentOffset:CGPointMake(0.7 * scrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
+    [self.backScrollView setContentOffset:CGPointMake(0.8 * scrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
     self.lastPosition = self.frontScrollView.contentOffset.x;
 }
 

@@ -41,6 +41,7 @@
 - (void)_init
 {
     self.counter = 0;
+    self.isFrontScroll  = NO;
     self.contentSize = CGSizeMake(5000, self.frame.size.height);
     self.visibleViews = [[NSMutableArray alloc] init];
     
@@ -72,6 +73,10 @@
 // recenter content periodically to achieve impression of infinite scrolling
 - (void)recenterIfNecessary
 {
+    if (!self.isFrontScroll) {
+        return;
+    }
+    
     CGPoint currentOffset = [self contentOffset];
     CGFloat contentWidth = [self contentSize].width;
     CGFloat centerOffsetX = (contentWidth - [self bounds].size.width) / 2.0;
@@ -115,7 +120,6 @@
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width / 2, self.frame.size.height)];
     imageView.center = view.center;
-   
     [view addSubview:imageView];
     
     self.counter++;
@@ -124,6 +128,7 @@
 
 - (CGFloat)placeNewViewOnRight:(CGFloat)rightEdge
 {
+ 
     UIView *view = [self insertView];
     [self.containerView addSubview:view];
     [self.visibleViews addObject:view];
@@ -152,7 +157,7 @@
 
 - (void)tileViewsFromMinX:(CGFloat)minimumVisibleX toMaxX:(CGFloat)maximumVisibleX
 {
-        if ([self.visibleViews count] == 0) {
+    if ([self.visibleViews count] == 0) {
         [self placeNewViewOnRight:minimumVisibleX];
     }
     
