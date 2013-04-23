@@ -11,7 +11,7 @@
 #import "MMInfiniteScroll.h"
 
 
-@interface MMViewController () <MMInfiniteScrollDelegate>
+@interface MMViewController () 
 
 //@property (weak, nonatomic) IBOutlet MMInfiniteScroll *scrollView;
 @property (nonatomic) NSInteger counter;
@@ -32,16 +32,6 @@
     
 }
 
-- (UIView *)insertView
-{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 500, self.view.frame.size.width)];
-    view.backgroundColor = [UIColor clearColor];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 101, 100)];
-    label.text = [NSString stringWithFormat:@"%i", self.counter];
-    [view addSubview:label];
-    self.counter++;
-    return view;
-}
 
 - (void)didReceiveMemoryWarning
 {

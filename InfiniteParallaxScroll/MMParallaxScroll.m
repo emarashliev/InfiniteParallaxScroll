@@ -22,6 +22,7 @@ enum MMInfiniteScrollDirection {
 @property (assign, nonatomic) MMInfiniteScrollDirection scrollDirection;
 @property (strong, nonatomic) MMInfiniteScroll *frontScrollView;
 @property (strong, nonatomic) MMInfiniteScroll *backScrollView;
+@property (assign, nonatomic) BOOL prevent;
 
 @end
 
@@ -57,6 +58,10 @@ enum MMInfiniteScrollDirection {
 
 - (void)_init
 {
+    self.prevent = NO;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(preventing) name:@"com.mm.InfiniteScroll.Prevent" object:nil];
+    
     self.frontScrollView = [[MMInfiniteScroll alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     self.backScrollView = [[MMInfiniteScroll alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     
@@ -66,34 +71,54 @@ enum MMInfiniteScrollDirection {
     [self addSubview:self.frontScrollView];
     self.frontScrollView.delegate = self;
     self.frontScrollView.isFrontScroll = YES;
-
+    
+    self.frontScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
+    self.backScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
+    [self.backScrollView setup];
+    [self.frontScrollView setup];
+    
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 
 #pragma mark - UIScrollView Delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"%f", scrollView.contentOffset.x);
+    //    NSLog(@"%f", scrollView.contentOffset.x);
     if (self.lastPosition > scrollView.contentOffset.x) {
         self.scrollDirection = MMInfiniteScrollDirectionRight;
-        NSLog(@"Right");
+        //        NSLog(@"Right");
     }else if (self.lastPosition < scrollView.contentOffset.x){
         self.scrollDirection = MMInfiniteScrollDirectionLeft;
-        NSLog(@"Left");
+        //        NSLog(@"Left");
+    }
+    
+    
+    CGFloat speedFactor = self.frontScrollView.contentSize.width / self.backScrollView.contentSize.width;
+    
+    self.lastPosition = self.frontScrollView.contentOffset.x;
+    
+    if (self.prevent) {
+        self.prevent = NO;
+        return;
     }
     
     [self.backScrollView setContentOffset:CGPointMake(0.8 * scrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
-    self.lastPosition = self.frontScrollView.contentOffset.x;
+
+}
+
+- (void)preventing
+{
+    self.prevent = YES;
 }
 
 

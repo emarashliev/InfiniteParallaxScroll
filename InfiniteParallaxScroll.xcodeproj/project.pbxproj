@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		579F6FBF1726DB2F002E4C6C /* steve1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FBB1726DB2F002E4C6C /* steve1.jpg */; };
+		579F6FC01726DB2F002E4C6C /* steve2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FBC1726DB2F002E4C6C /* steve2.jpg */; };
+		579F6FC11726DB2F002E4C6C /* steve3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FBD1726DB2F002E4C6C /* steve3.jpeg */; };
+		579F6FC21726DB2F002E4C6C /* steve4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FBE1726DB2F002E4C6C /* steve4.jpg */; };
+		579F6FD21726DB3F002E4C6C /* aluminum.png in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FC71726DB3F002E4C6C /* aluminum.png */; };
+		579F6FD31726DB3F002E4C6C /* applelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FC81726DB3F002E4C6C /* applelogo.png */; };
+		579F6FD41726DB3F002E4C6C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FC91726DB3F002E4C6C /* Default-568h@2x.png */; };
+		579F6FD51726DB3F002E4C6C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FCA1726DB3F002E4C6C /* Default.png */; };
+		579F6FD61726DB3F002E4C6C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FCB1726DB3F002E4C6C /* Default@2x.png */; };
+		579F6FD71726DB3F002E4C6C /* gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FCC1726DB3F002E4C6C /* gold.png */; };
+		579F6FD81726DB3F002E4C6C /* rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FCD1726DB3F002E4C6C /* rainbow.png */; };
+		579F6FE51726DB8E002E4C6C /* MMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 579F6FE11726DB8E002E4C6C /* MMAppDelegate.m */; };
+		579F6FE61726DB8E002E4C6C /* MMInfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 579F6FE21726DB8E002E4C6C /* MMInfiniteScroll.m */; };
+		579F6FE71726DB8E002E4C6C /* MMParallaxScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 579F6FE31726DB8E002E4C6C /* MMParallaxScroll.m */; };
+		579F6FE81726DB8E002E4C6C /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579F6FE41726DB8E002E4C6C /* MMViewController.m */; };
+		579F6FEB1726DBC2002E4C6C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FE91726DBC2002E4C6C /* MainStoryboard.storyboard */; };
+		579F6FEE1726DC04002E4C6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 579F6FED1726DC04002E4C6C /* main.m */; };
+		579F6FF31726DC2D002E4C6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FF11726DC2D002E4C6C /* InfoPlist.strings */; };
+		57A7D1EF171F0F1D0014B777 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A7D1EE171F0F1D0014B777 /* UIKit.framework */; };
+		57A7D1F1171F0F1D0014B777 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A7D1F0171F0F1D0014B777 /* Foundation.framework */; };
+		57A7D1F3171F0F1D0014B777 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A7D1F2171F0F1D0014B777 /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		579F6FBB1726DB2F002E4C6C /* steve1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = steve1.jpg; path = InfiniteParallaxScroll/steve1.jpg; sourceTree = SOURCE_ROOT; };
+		579F6FBC1726DB2F002E4C6C /* steve2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = steve2.jpg; path = InfiniteParallaxScroll/steve2.jpg; sourceTree = SOURCE_ROOT; };
+		579F6FBD1726DB2F002E4C6C /* steve3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = steve3.jpeg; path = InfiniteParallaxScroll/steve3.jpeg; sourceTree = SOURCE_ROOT; };
+		579F6FBE1726DB2F002E4C6C /* steve4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = steve4.jpg; path = InfiniteParallaxScroll/steve4.jpg; sourceTree = SOURCE_ROOT; };
+		579F6FC71726DB3F002E4C6C /* aluminum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = aluminum.png; path = InfiniteParallaxScroll/aluminum.png; sourceTree = SOURCE_ROOT; };
+		579F6FC81726DB3F002E4C6C /* applelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = applelogo.png; path = InfiniteParallaxScroll/applelogo.png; sourceTree = SOURCE_ROOT; };
+		579F6FC91726DB3F002E4C6C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "InfiniteParallaxScroll/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
+		579F6FCA1726DB3F002E4C6C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = InfiniteParallaxScroll/Default.png; sourceTree = SOURCE_ROOT; };
+		579F6FCB1726DB3F002E4C6C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "InfiniteParallaxScroll/Default@2x.png"; sourceTree = SOURCE_ROOT; };
+		579F6FCC1726DB3F002E4C6C /* gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gold.png; path = InfiniteParallaxScroll/gold.png; sourceTree = SOURCE_ROOT; };
+		579F6FCD1726DB3F002E4C6C /* rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rainbow.png; path = InfiniteParallaxScroll/rainbow.png; sourceTree = SOURCE_ROOT; };
+		579F6FDD1726DB8E002E4C6C /* MMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMAppDelegate.h; path = InfiniteParallaxScroll/MMAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		579F6FDE1726DB8E002E4C6C /* MMInfiniteScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMInfiniteScroll.h; path = InfiniteParallaxScroll/MMInfiniteScroll.h; sourceTree = SOURCE_ROOT; };
+		579F6FDF1726DB8E002E4C6C /* MMParallaxScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMParallaxScroll.h; path = InfiniteParallaxScroll/MMParallaxScroll.h; sourceTree = SOURCE_ROOT; };
+		579F6FE01726DB8E002E4C6C /* MMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMViewController.h; path = InfiniteParallaxScroll/MMViewController.h; sourceTree = SOURCE_ROOT; };
+		579F6FE11726DB8E002E4C6C /* MMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMAppDelegate.m; path = InfiniteParallaxScroll/MMAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		579F6FE21726DB8E002E4C6C /* MMInfiniteScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMInfiniteScroll.m; path = InfiniteParallaxScroll/MMInfiniteScroll.m; sourceTree = SOURCE_ROOT; };
+		579F6FE31726DB8E002E4C6C /* MMParallaxScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMParallaxScroll.m; path = InfiniteParallaxScroll/MMParallaxScroll.m; sourceTree = SOURCE_ROOT; };
+		579F6FE41726DB8E002E4C6C /* MMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMViewController.m; path = InfiniteParallaxScroll/MMViewController.m; sourceTree = SOURCE_ROOT; };
+		579F6FEA1726DBC2002E4C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = InfiniteParallaxScroll/en.lproj/MainStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
+		579F6FEC1726DBF5002E4C6C /* InfiniteParallaxScroll-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "InfiniteParallaxScroll-Prefix.pch"; path = "InfiniteParallaxScroll/InfiniteParallaxScroll-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		579F6FED1726DC04002E4C6C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = InfiniteParallaxScroll/main.m; sourceTree = SOURCE_ROOT; };
+		579F6FEF1726DC13002E4C6C /* InfiniteParallaxScroll-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "InfiniteParallaxScroll-Info.plist"; path = "InfiniteParallaxScroll/InfiniteParallaxScroll-Info.plist"; sourceTree = SOURCE_ROOT; };
+		579F6FF21726DC2D002E4C6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfiniteParallaxScroll/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		57A7D1EB171F0F1D0014B777 /* InfiniteParallaxScroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteParallaxScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57A7D1EE171F0F1D0014B777 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		57A7D1F0171F0F1D0014B777 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		57A7D1F2171F0F1D0014B777 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57A7D1E8171F0F1D0014B777 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57A7D1EF171F0F1D0014B777 /* UIKit.framework in Frameworks */,
+				57A7D1F1171F0F1D0014B777 /* Foundation.framework in Frameworks */,
+				57A7D1F3171F0F1D0014B777 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		579245B817215909006CEFD4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				579F6FC71726DB3F002E4C6C /* aluminum.png */,
+				579F6FC81726DB3F002E4C6C /* applelogo.png */,
+				579F6FCC1726DB3F002E4C6C /* gold.png */,
+				579F6FCD1726DB3F002E4C6C /* rainbow.png */,
+				579F6FBB1726DB2F002E4C6C /* steve1.jpg */,
+				579F6FBC1726DB2F002E4C6C /* steve2.jpg */,
+				579F6FBD1726DB2F002E4C6C /* steve3.jpeg */,
+				579F6FBE1726DB2F002E4C6C /* steve4.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		579F6FF61726E0BC002E4C6C /* MMParallaxScroll */ = {
+			isa = PBXGroup;
+			children = (
+				579F6FDE1726DB8E002E4C6C /* MMInfiniteScroll.h */,
+				579F6FE21726DB8E002E4C6C /* MMInfiniteScroll.m */,
+				579F6FDF1726DB8E002E4C6C /* MMParallaxScroll.h */,
+				579F6FE31726DB8E002E4C6C /* MMParallaxScroll.m */,
+			);
+			name = MMParallaxScroll;
+			sourceTree = "<group>";
+		};
+		57A7D1E2171F0F1D0014B777 = {
+			isa = PBXGroup;
+			children = (
+				57A7D1F4171F0F1D0014B777 /* InfiniteParallaxScroll */,
+				57A7D1ED171F0F1D0014B777 /* Frameworks */,
+				57A7D1EC171F0F1D0014B777 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		57A7D1EC171F0F1D0014B777 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57A7D1EB171F0F1D0014B777 /* InfiniteParallaxScroll.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57A7D1ED171F0F1D0014B777 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57A7D1EE171F0F1D0014B777 /* UIKit.framework */,
+				57A7D1F0171F0F1D0014B777 /* Foundation.framework */,
+				57A7D1F2171F0F1D0014B777 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57A7D1F4171F0F1D0014B777 /* InfiniteParallaxScroll */ = {
+			isa = PBXGroup;
+			children = (
+				579F6FDD1726DB8E002E4C6C /* MMAppDelegate.h */,
+				579F6FE11726DB8E002E4C6C /* MMAppDelegate.m */,
+				579F6FE01726DB8E002E4C6C /* MMViewController.h */,
+				579F6FE41726DB8E002E4C6C /* MMViewController.m */,
+				579F6FE91726DBC2002E4C6C /* MainStoryboard.storyboard */,
+				579F6FF61726E0BC002E4C6C /* MMParallaxScroll */,
+				579245B817215909006CEFD4 /* Images */,
+				57A7D1F5171F0F1D0014B777 /* Supporting Files */,
+			);
+			name = InfiniteParallaxScroll;
+			path = InfiniteScroll;
+			sourceTree = "<group>";
+		};
+		57A7D1F5171F0F1D0014B777 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				579F6FEC1726DBF5002E4C6C /* InfiniteParallaxScroll-Prefix.pch */,
+				579F6FED1726DC04002E4C6C /* main.m */,
+				579F6FC91726DB3F002E4C6C /* Default-568h@2x.png */,
+				579F6FCA1726DB3F002E4C6C /* Default.png */,
+				579F6FCB1726DB3F002E4C6C /* Default@2x.png */,
+				579F6FF11726DC2D002E4C6C /* InfoPlist.strings */,
+				579F6FEF1726DC13002E4C6C /* InfiniteParallaxScroll-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57A7D1EA171F0F1D0014B777 /* InfiniteParallaxScroll */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57A7D20E171F0F1D0014B777 /* Build configuration list for PBXNativeTarget "InfiniteParallaxScroll" */;
+			buildPhases = (
+				57A7D1E7171F0F1D0014B777 /* Sources */,
+				57A7D1E8171F0F1D0014B777 /* Frameworks */,
+				57A7D1E9171F0F1D0014B777 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InfiniteParallaxScroll;
+			productName = InfiniteScroll;
+			productReference = 57A7D1EB171F0F1D0014B777 /* InfiniteParallaxScroll.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57A7D1E3171F0F1D0014B777 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MM;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Emil Marashliev";
+			};
+			buildConfigurationList = 57A7D1E6171F0F1D0014B777 /* Build configuration list for PBXProject "InfiniteParallaxScroll" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 57A7D1E2171F0F1D0014B777;
+			productRefGroup = 57A7D1EC171F0F1D0014B777 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57A7D1EA171F0F1D0014B777 /* InfiniteParallaxScroll */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57A7D1E9171F0F1D0014B777 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				579F6FBF1726DB2F002E4C6C /* steve1.jpg in Resources */,
+				579F6FC01726DB2F002E4C6C /* steve2.jpg in Resources */,
+				579F6FC11726DB2F002E4C6C /* steve3.jpeg in Resources */,
+				579F6FC21726DB2F002E4C6C /* steve4.jpg in Resources */,
+				579F6FD21726DB3F002E4C6C /* aluminum.png in Resources */,
+				579F6FD31726DB3F002E4C6C /* applelogo.png in Resources */,
+				579F6FD41726DB3F002E4C6C /* Default-568h@2x.png in Resources */,
+				579F6FD51726DB3F002E4C6C /* Default.png in Resources */,
+				579F6FEB1726DBC2002E4C6C /* MainStoryboard.storyboard in Resources */,
+				579F6FD61726DB3F002E4C6C /* Default@2x.png in Resources */,
+				579F6FD71726DB3F002E4C6C /* gold.png in Resources */,
+				579F6FD81726DB3F002E4C6C /* rainbow.png in Resources */,
+				579F6FF31726DC2D002E4C6C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57A7D1E7171F0F1D0014B777 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				579F6FE51726DB8E002E4C6C /* MMAppDelegate.m in Sources */,
+				579F6FE61726DB8E002E4C6C /* MMInfiniteScroll.m in Sources */,
+				579F6FE71726DB8E002E4C6C /* MMParallaxScroll.m in Sources */,
+				579F6FE81726DB8E002E4C6C /* MMViewController.m in Sources */,
+				579F6FEE1726DC04002E4C6C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		579F6FE91726DBC2002E4C6C /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				579F6FEA1726DBC2002E4C6C /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		579F6FF11726DC2D002E4C6C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				579F6FF21726DC2D002E4C6C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		57A7D20C171F0F1D0014B777 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		57A7D20D171F0F1D0014B777 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		57A7D20F171F0F1D0014B777 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InfiniteParallaxScroll/InfiniteParallaxScroll-Prefix.pch";
+				INFOPLIST_FILE = "InfiniteParallaxScroll/InfiniteParallaxScroll-Info.plist";
+				PRODUCT_NAME = InfiniteParallaxScroll;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		57A7D210171F0F1D0014B777 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InfiniteParallaxScroll/InfiniteParallaxScroll-Prefix.pch";
+				INFOPLIST_FILE = "InfiniteParallaxScroll/InfiniteParallaxScroll-Info.plist";
+				PRODUCT_NAME = InfiniteParallaxScroll;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57A7D1E6171F0F1D0014B777 /* Build configuration list for PBXProject "InfiniteParallaxScroll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57A7D20C171F0F1D0014B777 /* Debug */,
+				57A7D20D171F0F1D0014B777 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57A7D20E171F0F1D0014B777 /* Build configuration list for PBXNativeTarget "InfiniteParallaxScroll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57A7D20F171F0F1D0014B777 /* Debug */,
+				57A7D210171F0F1D0014B777 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 57A7D1E3171F0F1D0014B777 /* Project object */;
+}

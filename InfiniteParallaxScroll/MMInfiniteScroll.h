@@ -23,4 +23,7 @@
 @property (assign, nonatomic) CGSize imagesSize;
 @property (assign, nonatomic) BOOL isFrontScroll;
 
+- (void)setup;
+- (void)recenterIfNecessary;
+
 @end
