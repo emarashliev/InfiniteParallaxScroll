@@ -82,7 +82,6 @@
     CGFloat distanceFromCenter = fabs(currentOffset.x - centerOffsetX);
     
     if (distanceFromCenter > (contentWidth / 4.0)) {
-        [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"com.mm.InfiniteScroll.Prevent" object:nil]];
         self.contentOffset = CGPointMake(centerOffsetX, currentOffset.y);
     
         NSLog(@"Current Offset is %@", NSStringFromCGPoint(currentOffset));
@@ -127,10 +126,18 @@
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     imageView.image = image;
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width / 2, self.frame.size.height)];
-//    if (self.isFrontScroll) {
+    UIView *view = [[UIView alloc] init];
+    
+    if (self.isFrontScroll) {
+        view.frame = CGRectMake(0, 0, self.frame.size.width / 2, self.frame.size.height);
         imageView.center = view.center;
-//    }
+    } else {
+        view.frame = CGRectMake(0, 0, (self.frame.size.width / 2) * self.scaleFactor, self.frame.size.height);
+        imageView.center = CGPointMake(view.center.x * self.scaleFactor, view.center.y);
+    }
+    
+    
+
     
     [view addSubview:imageView];
     

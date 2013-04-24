@@ -22,7 +22,6 @@ enum MMInfiniteScrollDirection {
 @property (assign, nonatomic) MMInfiniteScrollDirection scrollDirection;
 @property (strong, nonatomic) MMInfiniteScroll *frontScrollView;
 @property (strong, nonatomic) MMInfiniteScroll *backScrollView;
-@property (assign, nonatomic) BOOL prevent;
 
 @end
 
@@ -58,10 +57,7 @@ enum MMInfiniteScrollDirection {
 
 - (void)_init
 {
-    self.prevent = NO;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(preventing) name:@"com.mm.InfiniteScroll.Prevent" object:nil];
-    
+
     self.frontScrollView = [[MMInfiniteScroll alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     self.backScrollView = [[MMInfiniteScroll alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     
@@ -72,8 +68,10 @@ enum MMInfiniteScrollDirection {
     self.frontScrollView.delegate = self;
     self.frontScrollView.isFrontScroll = YES;
     
-    self.frontScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
+    self.frontScrollView.contentSize = CGSizeMake(6000, self.frame.size.height);
     self.backScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
+    
+    self.backScrollView.scaleFactor = self.backScrollView.contentSize.width / self.frontScrollView.contentSize.width;
     [self.backScrollView setup];
     [self.frontScrollView setup];
     
@@ -103,22 +101,14 @@ enum MMInfiniteScrollDirection {
     }
     
     
-    CGFloat speedFactor = self.frontScrollView.contentSize.width / self.backScrollView.contentSize.width;
+    CGFloat speedFactor = self.backScrollView.contentSize.width / self.frontScrollView.contentSize.width ;
     
     self.lastPosition = self.frontScrollView.contentOffset.x;
     
-    if (self.prevent) {
-        self.prevent = NO;
-        return;
-    }
+  
     
-    [self.backScrollView setContentOffset:CGPointMake(0.8 * scrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
+    [self.backScrollView setContentOffset:CGPointMake(speedFactor * scrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
 
-}
-
-- (void)preventing
-{
-    self.prevent = YES;
 }
 
 
