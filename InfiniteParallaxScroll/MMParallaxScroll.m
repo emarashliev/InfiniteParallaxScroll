@@ -100,11 +100,16 @@ enum MMInfiniteScrollDirection {
         //        NSLog(@"Left");
     }
     
-        
+    CGFloat difference = self.frontScrollView.contentOffset.x - self.lastPosition;        
     self.lastPosition = self.frontScrollView.contentOffset.x;
     
+
+    if (abs(difference) >= scrollView.contentSize.width / 4) {
+        return;
+    }
+    
       
-    [self.backScrollView setContentOffset:CGPointMake(0.8 * scrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
+    [self.backScrollView setContentOffset:CGPointMake((0.4 * difference) + self.backScrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
 
 }
 

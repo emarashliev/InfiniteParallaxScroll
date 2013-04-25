@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57972C5E17297513006EEED0 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57972C5D17297512006EEED0 /* TestViewController.m */; };
 		579F6FBF1726DB2F002E4C6C /* steve1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FBB1726DB2F002E4C6C /* steve1.jpg */; };
 		579F6FC01726DB2F002E4C6C /* steve2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FBC1726DB2F002E4C6C /* steve2.jpg */; };
 		579F6FC11726DB2F002E4C6C /* steve3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FBD1726DB2F002E4C6C /* steve3.jpeg */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57972C5C17297512006EEED0 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = InfiniteParallaxScroll/TestViewController.h; sourceTree = SOURCE_ROOT; };
+		57972C5D17297512006EEED0 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = InfiniteParallaxScroll/TestViewController.m; sourceTree = SOURCE_ROOT; };
 		579F6FBB1726DB2F002E4C6C /* steve1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = steve1.jpg; path = InfiniteParallaxScroll/steve1.jpg; sourceTree = SOURCE_ROOT; };
 		579F6FBC1726DB2F002E4C6C /* steve2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = steve2.jpg; path = InfiniteParallaxScroll/steve2.jpg; sourceTree = SOURCE_ROOT; };
 		579F6FBD1726DB2F002E4C6C /* steve3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = steve3.jpeg; path = InfiniteParallaxScroll/steve3.jpeg; sourceTree = SOURCE_ROOT; };
@@ -139,6 +142,8 @@
 				579F6FF61726E0BC002E4C6C /* MMParallaxScroll */,
 				579245B817215909006CEFD4 /* Images */,
 				57A7D1F5171F0F1D0014B777 /* Supporting Files */,
+				57972C5C17297512006EEED0 /* TestViewController.h */,
+				57972C5D17297512006EEED0 /* TestViewController.m */,
 			);
 			name = InfiniteParallaxScroll;
 			path = InfiniteScroll;
@@ -238,6 +243,7 @@
 				579F6FE71726DB8E002E4C6C /* MMParallaxScroll.m in Sources */,
 				579F6FE81726DB8E002E4C6C /* MMViewController.m in Sources */,
 				579F6FEE1726DC04002E4C6C /* main.m in Sources */,
+				57972C5E17297513006EEED0 /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

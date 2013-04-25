@@ -116,14 +116,21 @@
 {
     NSString *imageName = [self.images objectAtIndex:(self.counter % self.images.count)];
     UIImage *image = [UIImage imageNamed:imageName];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    UIImageView *imageView = [[UIImageView alloc] init];
+
+    if (self.isFrontScroll) {
+        imageView.frame = CGRectMake(0, 0, 100, 100);
+    } else {
+       imageView.frame = CGRectMake(0, 0, self.frame.size.width, 100);
+    }
+    
     imageView.image = image;
     
     UIView *view = [[UIView alloc] init];
     
     
     
-    view.frame = CGRectMake(0, 0, self.frame.size.width / 2, self.frame.size.height);
+    view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     imageView.center = view.center;
     
     
