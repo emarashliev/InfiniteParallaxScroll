@@ -16,7 +16,7 @@ enum MMInfiniteScrollDirection {
     MMInfiniteScrollDirectionRight
 };
 
-@interface MMParallaxScroll () <UIScrollViewDelegate>
+@interface MMParallaxScroll () 
 
 @property (assign, nonatomic) CGFloat lastPosition;
 @property (assign, nonatomic) MMInfiniteScrollDirection scrollDirection;
@@ -68,10 +68,10 @@ enum MMInfiniteScrollDirection {
     self.frontScrollView.delegate = self;
     self.frontScrollView.isFrontScroll = YES;
     
-    self.frontScrollView.contentSize = CGSizeMake(6000, self.frame.size.height);
+    self.frontScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
     self.backScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
     
-    self.backScrollView.scaleFactor = self.backScrollView.contentSize.width / self.frontScrollView.contentSize.width;
+
     [self.backScrollView setup];
     [self.frontScrollView setup];
     
@@ -100,16 +100,12 @@ enum MMInfiniteScrollDirection {
         //        NSLog(@"Left");
     }
     
-    
-    CGFloat speedFactor = self.backScrollView.contentSize.width / self.frontScrollView.contentSize.width ;
-    
+        
     self.lastPosition = self.frontScrollView.contentOffset.x;
     
-  
-    
-    [self.backScrollView setContentOffset:CGPointMake(speedFactor * scrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
+      
+    [self.backScrollView setContentOffset:CGPointMake(0.8 * scrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
 
 }
-
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MMParallaxScroll : UIView
+@interface MMParallaxScroll : UIView <UIScrollViewDelegate>
 
 
 

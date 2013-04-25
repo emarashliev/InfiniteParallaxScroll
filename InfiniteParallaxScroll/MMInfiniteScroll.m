@@ -7,7 +7,7 @@
 //
 
 #import "MMInfiniteScroll.h"
-
+#import "MMParallaxScroll.h"
 
 
 
@@ -26,7 +26,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-//        [self _init];
+        //        [self _init];
         self.isFrontScroll  = NO;
     }
     return self;
@@ -34,7 +34,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if ((self = [super initWithCoder:aDecoder])) {
-//        [self _init];
+        //        [self _init];
         self.isFrontScroll  = NO;
     }
     return self;
@@ -44,7 +44,7 @@
 {
     self.counter = 0;
     
-//    self.contentSize = CGSizeMake(5000, self.frame.size.height);
+    //    self.contentSize = CGSizeMake(5000, self.frame.size.height);
     self.visibleViews = [[NSMutableArray alloc] init];
     
     self.containerView = [[UIView alloc] init];
@@ -59,13 +59,13 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 
 
@@ -83,11 +83,6 @@
     
     if (distanceFromCenter > (contentWidth / 4.0)) {
         self.contentOffset = CGPointMake(centerOffsetX, currentOffset.y);
-    
-        NSLog(@"Current Offset is %@", NSStringFromCGPoint(currentOffset));
-        NSLog(@"Content Width is %.2f", contentWidth);
-        NSLog(@"Center Offset X is %.2f", centerOffsetX);
-        NSLog(@"Distance from Center is %.2f", distanceFromCenter);
         
         // move content by the same amount so it appears to stay still
         for (UIView *view in self.visibleViews) {
@@ -95,8 +90,6 @@
             center.x += (centerOffsetX - currentOffset.x);
             view.center = [self convertPoint:center toView:self.containerView];
         }
-        
-        //self.containerView.center = CGPointMake(self.containerView.center.x + (centerOffsetX - currentOffset.x), self.containerView.center.y);
     }
 }
 
@@ -104,9 +97,9 @@
 {
     [super layoutSubviews];
     if (self.isFrontScroll) {
-         [self recenterIfNecessary];
+        [self recenterIfNecessary];
     }
-   
+    
     
     // tile content in visible bounds
     CGRect visibleBounds = [self convertRect:[self bounds] toView:self.containerView];
@@ -128,16 +121,13 @@
     
     UIView *view = [[UIView alloc] init];
     
-    if (self.isFrontScroll) {
-        view.frame = CGRectMake(0, 0, self.frame.size.width / 2, self.frame.size.height);
-        imageView.center = view.center;
-    } else {
-        view.frame = CGRectMake(0, 0, (self.frame.size.width / 2) * self.scaleFactor, self.frame.size.height);
-        imageView.center = CGPointMake(view.center.x * self.scaleFactor, view.center.y);
-    }
     
     
-
+    view.frame = CGRectMake(0, 0, self.frame.size.width / 2, self.frame.size.height);
+    imageView.center = view.center;
+    
+    
+    
     
     [view addSubview:imageView];
     
@@ -147,7 +137,7 @@
 
 - (CGFloat)placeNewViewOnRight:(CGFloat)rightEdge
 {
- 
+    
     UIView *view = [self insertView];
     [self.containerView addSubview:view];
     [self.visibleViews addObject:view];
@@ -162,7 +152,7 @@
 
 - (CGFloat)placeNewViewOnLeft:(CGFloat)leftEdge
 {
-
+    
     UIView *view = [self insertView];
     [self.containerView addSubview:view];
     [self.visibleViews insertObject:view atIndex:0];
@@ -180,7 +170,7 @@
     if ([self.visibleViews count] == 0) {
         [self placeNewViewOnRight:minimumVisibleX];
     }
-
+    
     // add views on right side
     UIView *lastView = [self.visibleViews lastObject];
     CGFloat rightEdge = CGRectGetMaxX([lastView frame]);

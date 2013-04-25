@@ -22,7 +22,7 @@
 @property (strong, nonatomic) NSArray *images;
 @property (assign, nonatomic) CGSize imagesSize;
 @property (assign, nonatomic) BOOL isFrontScroll;
-@property (assign, nonatomic) CGFloat scaleFactor;
+
 
 - (void)setup;
 - (void)recenterIfNecessary;
