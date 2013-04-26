@@ -10,16 +10,9 @@
 
 #import "MMInfiniteScroll.h"
 
-typedef NSInteger MMInfiniteScrollDirection;
-enum MMInfiniteScrollDirection {
-    MMInfiniteScrollDirectionLeft,
-    MMInfiniteScrollDirectionRight
-};
-
 @interface MMParallaxScroll () 
 
 @property (assign, nonatomic) CGFloat lastPosition;
-@property (assign, nonatomic) MMInfiniteScrollDirection scrollDirection;
 @property (strong, nonatomic) MMInfiniteScroll *frontScrollView;
 @property (strong, nonatomic) MMInfiniteScroll *backScrollView;
 
@@ -61,10 +54,10 @@ enum MMInfiniteScrollDirection {
     self.frontScrollView = [[MMInfiniteScroll alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     self.backScrollView = [[MMInfiniteScroll alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     
-    self.backScrollView.images = @[@"aluminum", @"gold", @"rainbow", @"applelogo"];
-    self.frontScrollView.images = @[@"steve1.jpg", @"steve2.jpg", @"steve3.jpeg", @"steve4.jpg"];
     [self addSubview:self.backScrollView];
     [self addSubview:self.frontScrollView];
+    self.frontScrollView.dataSource = self;
+    self.backScrollView.dataSource = self;
     self.frontScrollView.delegate = self;
     self.frontScrollView.isFrontScroll = YES;
     
@@ -72,8 +65,8 @@ enum MMInfiniteScrollDirection {
     self.backScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
     
 
-    [self.backScrollView setup];
-    [self.frontScrollView setup];
+//    [self.backScrollView setup];
+//    [self.frontScrollView setup];
     
 }
 
@@ -88,29 +81,24 @@ enum MMInfiniteScrollDirection {
 
 
 #pragma mark - UIScrollView Delegate
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    //    NSLog(@"%f", scrollView.contentOffset.x);
-    if (self.lastPosition > scrollView.contentOffset.x) {
-        self.scrollDirection = MMInfiniteScrollDirectionRight;
-        //        NSLog(@"Right");
-    }else if (self.lastPosition < scrollView.contentOffset.x){
-        self.scrollDirection = MMInfiniteScrollDirectionLeft;
-        //        NSLog(@"Left");
-    }
-    
+{    
     CGFloat difference = self.frontScrollView.contentOffset.x - self.lastPosition;        
     self.lastPosition = self.frontScrollView.contentOffset.x;
-    
 
     if (abs(difference) >= scrollView.contentSize.width / 4) {
         return;
     }
-    
       
     [self.backScrollView setContentOffset:CGPointMake((0.4 * difference) + self.backScrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
 
 }
+
+#pragma mark - Proxy Methods
+- (MMParallaxView *)infiniteScrollWillInsertParallaxView:(MMInfiniteScroll *)infiniteScroll
+{
+    return [self.dataSource infiniteScrollWillInsertParallaxView:infiniteScroll];
+}
+
 
 @end

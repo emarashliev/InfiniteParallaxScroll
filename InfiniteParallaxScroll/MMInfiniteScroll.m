@@ -8,19 +8,14 @@
 
 #import "MMInfiniteScroll.h"
 #import "MMParallaxScroll.h"
-
-#define IMAGEVIEW_TAG 10101
-
+#import "MMParallaxView.h"
 
 
 @interface MMInfiniteScroll ()
 
 @property (strong, nonatomic) NSMutableArray *visibleViews;
 @property (strong, nonatomic) UIView *containerView;
-@property (assign, nonatomic) NSInteger counter;
 @property (strong, nonatomic) NSMutableSet *recycledViews;
-
-- (UIView *)dequeueResycledView;
 
 @end
 
@@ -31,32 +26,28 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        //        [self _init];
-        self.isFrontScroll  = NO;
+        [self _init];
     }
     return self;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if ((self = [super initWithCoder:aDecoder])) {
-        //        [self _init];
-        self.isFrontScroll  = NO;
+        [self _init];
     }
     return self;
 }
 
-- (void)setup
+- (void)_init
 {
-    self.counter = 0;
+    self.isFrontScroll  = NO;
     self.recycledViews = [[NSMutableSet alloc] init];
-    //    self.contentSize = CGSizeMake(5000, self.frame.size.height);
     self.visibleViews = [[NSMutableArray alloc] init];
     
     self.containerView = [[UIView alloc] init];
+    [self addSubview:self.containerView];
     self.containerView.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
     self.containerView.backgroundColor = [UIColor clearColor];
-    [self addSubview:self.containerView];
-    
     [self.containerView setUserInteractionEnabled:NO];
     
     // hide horizontal scroll indicator so our recentering trick is not revealed
@@ -110,53 +101,22 @@
     CGRect visibleBounds = [self convertRect:[self bounds] toView:self.containerView];
     CGFloat minimumVisibleX = CGRectGetMinX(visibleBounds);
     CGFloat maximumVisibleX = CGRectGetMaxX(visibleBounds);
-    
+
     [self tileViewsFromMinX:minimumVisibleX toMaxX:maximumVisibleX];
 }
 
 
 #pragma mark - Tiling
 
-- (UIView *)insertView
-{
-    NSString *imageName = [self.images objectAtIndex:(self.counter % self.images.count)];
-    
-    UIView *view = [self dequeueResycledView];
-    if (view == nil) {
-        view = [[UIView alloc] init];
-        
-        UIImageView *imageView = [[UIImageView alloc] init];
-        imageView.tag = IMAGEVIEW_TAG;
-        if (self.isFrontScroll) {
-            imageView.frame = CGRectMake(0, 0, 100, 100);
-        } else {
-            imageView.frame = CGRectMake(0, 0, self.frame.size.width, 100);
-        }
-        
-        view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-        imageView.center = view.center;
-                
-        [view addSubview:imageView];
-
-    }
-    
-    UIImage *image = [UIImage imageNamed:imageName];
-    [(UIImageView *)[view viewWithTag:IMAGEVIEW_TAG] setImage:image];
-    
-    self.counter++;
-    return view;
-}
-
 - (CGFloat)placeNewViewOnRight:(CGFloat)rightEdge
 {
     
-    UIView *view = [self insertView];
+    MMParallaxView *view = [self.dataSource infiniteScrollWillInsertParallaxView:self];
     [self.containerView addSubview:view];
     [self.visibleViews addObject:view];
-    
     CGRect frame = [view frame];
     frame.origin.x = rightEdge;
-    frame.origin.y = [self.containerView bounds].size.height - frame.size.height;
+//    frame.origin.y = [self.containerView bounds].size.height - frame.size.height;
     [view setFrame:frame];
     
     return CGRectGetMaxX(frame);
@@ -165,13 +125,13 @@
 - (CGFloat)placeNewViewOnLeft:(CGFloat)leftEdge
 {
     
-    UIView *view = [self insertView];
+    MMParallaxView *view = [self.dataSource infiniteScrollWillInsertParallaxView:self];
     [self.containerView addSubview:view];
     [self.visibleViews insertObject:view atIndex:0];
     
     CGRect frame = [view frame];
     frame.origin.x = leftEdge - frame.size.width;
-    frame.origin.y = [self.containerView bounds].size.height - frame.size.height;
+//    frame.origin.y = [self.containerView bounds].size.height - frame.size.height;
     [view setFrame:frame];
     
     return CGRectGetMinX(frame);
@@ -217,9 +177,9 @@
 }
 
 
-- (UIView *)dequeueResycledView
+- (MMParallaxView *)dequeueRecycledView
 {
-    UIView *view = [self.recycledViews anyObject];
+    MMParallaxView *view = [self.recycledViews anyObject];
     if (view) {
         [self.recycledViews removeObject:view];
     }

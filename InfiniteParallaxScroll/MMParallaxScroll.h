@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMInfiniteScroll.h"
 
-@interface MMParallaxScroll : UIView <UIScrollViewDelegate>
+@interface MMParallaxScroll : UIView <UIScrollViewDelegate, MMInfiniteScrollDataSource>
 
-
+@property (nonatomic) id<MMInfiniteScrollDataSource> dataSource;
 
 @end

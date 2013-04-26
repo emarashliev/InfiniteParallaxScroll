@@ -8,23 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol MMInfiniteScrollDelegate <NSObject, UIScrollViewDelegate>
+@class MMInfiniteScroll, MMParallaxView;
+@protocol MMInfiniteScrollDataSource <NSObject>
 
 @required
-- (UIView *)insertView;
-
+- (MMParallaxView *)infiniteScrollWillInsertParallaxView:(MMInfiniteScroll *)infiniteScroll;
 
 @end
 
+
 @interface MMInfiniteScroll : UIScrollView <UIScrollViewDelegate>
 
-//@property (assign, nonatomic) id<MMInfiniteScrollDelegate> delegate;
-@property (strong, nonatomic) NSArray *images;
-@property (assign, nonatomic) CGSize imagesSize;
+@property (assign, nonatomic) id<MMInfiniteScrollDataSource> dataSource;
 @property (assign, nonatomic) BOOL isFrontScroll;
 
-
-- (void)setup;
-- (void)recenterIfNecessary;
+- (UIView *)dequeueRecycledView;
 
 @end
