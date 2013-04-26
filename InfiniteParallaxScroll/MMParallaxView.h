@@ -10,4 +10,6 @@
 
 @interface MMParallaxView : UIView
 
+@property (strong, nonatomic) NSString *imageName;
+
 @end

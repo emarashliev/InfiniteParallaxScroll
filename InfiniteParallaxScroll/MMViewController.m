@@ -79,6 +79,7 @@
     }
     
     UIImage *image = [UIImage imageNamed:imageName];
+    view.imageName = imageName;
     [(UIImageView *)[view viewWithTag:IMAGEVIEW_TAG] setImage:image];
     return view;
 }
