@@ -11,6 +11,7 @@
 
 @interface MMParallaxScroll : UIView <UIScrollViewDelegate, MMInfiniteScrollDataSource>
 
-@property (nonatomic) id<MMInfiniteScrollDataSource> dataSource;
+@property (assign, nonatomic) id<MMInfiniteScrollDataSource> dataSource;
+@property (assign, nonatomic) CGFloat speedFactor;
 
 @end

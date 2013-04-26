@@ -50,7 +50,7 @@
 
 - (void)_init
 {
-
+    self.speedFactor = 0.5;
     self.frontScrollView = [[MMInfiniteScroll alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     self.backScrollView = [[MMInfiniteScroll alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     
@@ -62,12 +62,7 @@
     self.frontScrollView.isFrontScroll = YES;
     
     self.frontScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
-    self.backScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
-    
-
-//    [self.backScrollView setup];
-//    [self.frontScrollView setup];
-    
+    self.backScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);    
 }
 
 /*
@@ -90,7 +85,7 @@
         return;
     }
       
-    [self.backScrollView setContentOffset:CGPointMake((0.4 * difference) + self.backScrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
+    [self.backScrollView setContentOffset:CGPointMake((self.speedFactor * difference) + self.backScrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
 
 }
 
