@@ -9,6 +9,8 @@
 #import "MMInfiniteScroll.h"
 #import "MMParallaxScroll.h"
 
+#define IMAGEVIEW_TAG 10101
+
 
 
 @interface MMInfiniteScroll ()
@@ -16,6 +18,9 @@
 @property (strong, nonatomic) NSMutableArray *visibleViews;
 @property (strong, nonatomic) UIView *containerView;
 @property (assign, nonatomic) NSInteger counter;
+@property (strong, nonatomic) NSMutableSet *recycledViews;
+
+- (UIView *)dequeueResycledView;
 
 @end
 
@@ -43,7 +48,7 @@
 - (void)setup
 {
     self.counter = 0;
-    
+    self.recycledViews = [[NSMutableSet alloc] init];
     //    self.contentSize = CGSizeMake(5000, self.frame.size.height);
     self.visibleViews = [[NSMutableArray alloc] init];
     
@@ -115,28 +120,28 @@
 - (UIView *)insertView
 {
     NSString *imageName = [self.images objectAtIndex:(self.counter % self.images.count)];
-    UIImage *image = [UIImage imageNamed:imageName];
-    UIImageView *imageView = [[UIImageView alloc] init];
+    
+    UIView *view = [self dequeueResycledView];
+    if (view == nil) {
+        view = [[UIView alloc] init];
+        
+        UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.tag = IMAGEVIEW_TAG;
+        if (self.isFrontScroll) {
+            imageView.frame = CGRectMake(0, 0, 100, 100);
+        } else {
+            imageView.frame = CGRectMake(0, 0, self.frame.size.width, 100);
+        }
+        
+        view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+        imageView.center = view.center;
+                
+        [view addSubview:imageView];
 
-    if (self.isFrontScroll) {
-        imageView.frame = CGRectMake(0, 0, 100, 100);
-    } else {
-       imageView.frame = CGRectMake(0, 0, self.frame.size.width, 100);
     }
     
-    imageView.image = image;
-    
-    UIView *view = [[UIView alloc] init];
-    
-    
-    
-    view.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    imageView.center = view.center;
-    
-    
-    
-    
-    [view addSubview:imageView];
+    UIImage *image = [UIImage imageNamed:imageName];
+    [(UIImageView *)[view viewWithTag:IMAGEVIEW_TAG] setImage:image];
     
     self.counter++;
     return view;
@@ -196,6 +201,7 @@
     lastView = [self.visibleViews lastObject];
     while ([lastView frame].origin.x > maximumVisibleX) {
         [lastView removeFromSuperview];
+        [self.recycledViews addObject:lastView];
         [self.visibleViews removeLastObject];
         lastView = [self.visibleViews lastObject];
     }
@@ -204,9 +210,21 @@
     firstView = [self.visibleViews objectAtIndex:0];
     while (CGRectGetMaxX([firstView frame]) < minimumVisibleX) {
         [firstView removeFromSuperview];
+        [self.recycledViews addObject:firstView];
         [self.visibleViews removeObjectAtIndex:0];
         firstView = [self.visibleViews objectAtIndex:0];
     }
+}
+
+
+- (UIView *)dequeueResycledView
+{
+    UIView *view = [self.recycledViews anyObject];
+    if (view) {
+        [self.recycledViews removeObject:view];
+    }
+    
+    return view;
 }
 
 @end
