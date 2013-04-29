@@ -62,7 +62,7 @@
     self.frontScrollView.isFrontScroll = YES;
     
     self.frontScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
-    self.backScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);    
+    self.backScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
 }
 
 /*
