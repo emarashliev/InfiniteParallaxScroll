@@ -7,8 +7,8 @@
 //
 
 #import "MMParallaxScroll.h"
-
 #import "MMInfiniteScroll.h"
+#import "MMParallaxView.h"
 
 @interface MMParallaxScroll () 
 
@@ -21,14 +21,6 @@
 
 @implementation MMParallaxScroll
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        [self _init];
-    }
-    return self;
-}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -80,13 +72,16 @@
 {    
     CGFloat difference = self.frontScrollView.contentOffset.x - self.lastPosition;        
     self.lastPosition = self.frontScrollView.contentOffset.x;
-
+    
     if (abs(difference) >= scrollView.contentSize.width / 4) {
         return;
     }
-      
+    
+    UILabel *label = (UILabel *)[scrollView viewWithTag:PARALLAX_VIEW_LABEL_TAG];
+    label.frame = CGRectMake(label.frame.origin.x + (difference * -1), label.frame.origin.y, label.frame.size.width, label.frame.size.height);
+    
     [self.backScrollView setContentOffset:CGPointMake((self.speedFactor * difference) + self.backScrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
-
+    
 }
 
 #pragma mark - Proxy Methods

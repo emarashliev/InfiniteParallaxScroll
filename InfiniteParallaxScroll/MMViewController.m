@@ -10,7 +10,6 @@
 #import "MMParallaxScroll.h"
 #import "MMParallaxView.h"
 
-#define IMAGEVIEW_TAG 10101
 
 
 
@@ -59,28 +58,29 @@
         self.backScrollcounter++;
     }
 
-    MMParallaxView *view = (MMParallaxView *)[infiniteScroll dequeueRecycledView];
-    if (view == nil) {
-        view = [[MMParallaxView alloc] init];
-        
-        UIImageView *imageView = [[UIImageView alloc] init];
-        imageView.tag = IMAGEVIEW_TAG;
+    MMParallaxView *parallaxView = (MMParallaxView *)[infiniteScroll dequeueRecycledView];
+    if (parallaxView == nil) {
+        parallaxView = [[MMParallaxView alloc] init];
+    
         if (infiniteScroll.isFrontScroll) {
-            imageView.frame = CGRectMake(0, 0, 100, 100);
+            parallaxView.imageView.frame = CGRectMake(0, 0, 100, 100);
+            parallaxView.frame = CGRectMake(0, 0, infiniteScroll.frame.size.width, infiniteScroll.frame.size.height);
+//            parallaxView.textLabel.textColor = [UIColor whiteColor];
+            
         } else {
-            imageView.frame = CGRectMake(0, 0, infiniteScroll.frame.size.width, 100);
+            parallaxView.frame = CGRectMake(0, 0, infiniteScroll.frame.size.width, infiniteScroll.frame.size.height);
+            parallaxView.imageView.frame = CGRectMake(0, 0, infiniteScroll.frame.size.width, 100);
         }
-        
-        view.frame = CGRectMake(0, 0, infiniteScroll.frame.size.width, infiniteScroll.frame.size.height);
+        parallaxView.imageView.center = parallaxView.center;
+    }
 
-        imageView.center = view.center;
-        [view addSubview:imageView];
+    if (infiniteScroll.isFrontScroll) {
+        parallaxView.text = @"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.";
         
     }
     
-    UIImage *image = [UIImage imageNamed:imageName];
-    [(UIImageView *)[view viewWithTag:IMAGEVIEW_TAG] setImage:image];
-    return view;
+    parallaxView.imageView.image = [UIImage imageNamed:imageName];
+    return parallaxView;
 }
 
 

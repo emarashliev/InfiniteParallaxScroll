@@ -71,7 +71,6 @@
 // recenter content periodically to achieve impression of infinite scrolling
 - (void)recenterIfNecessary
 {
-    
     CGPoint currentOffset = [self contentOffset];
     CGFloat contentWidth = [self contentSize].width;
     CGFloat centerOffsetX = (contentWidth - [self bounds].size.width) / 2.0;
@@ -88,6 +87,7 @@
         }
     }
 }
+
 
 - (void)layoutSubviews
 {
@@ -121,6 +121,7 @@
     
     return CGRectGetMaxX(frame);
 }
+
 
 - (CGFloat)placeNewViewOnLeft:(CGFloat)leftEdge
 {
