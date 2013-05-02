@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		579723BF1732A7AD00DE898A /* Storyboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 579723BE1732A7AD00DE898A /* Storyboard_iPad.storyboard */; };
 		579F3E04172AB8D700802F00 /* MMParallaxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 579F3E03172AB8D700802F00 /* MMParallaxView.m */; };
 		579F6FBF1726DB2F002E4C6C /* steve1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FBB1726DB2F002E4C6C /* steve1.jpg */; };
 		579F6FC01726DB2F002E4C6C /* steve2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 579F6FBC1726DB2F002E4C6C /* steve2.jpg */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		579723BE1732A7AD00DE898A /* Storyboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard_iPad.storyboard; path = InfiniteParallaxScroll/Storyboard_iPad.storyboard; sourceTree = SOURCE_ROOT; };
 		579F3E02172AB8D700802F00 /* MMParallaxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMParallaxView.h; path = InfiniteParallaxScroll/MMParallaxView.h; sourceTree = SOURCE_ROOT; };
 		579F3E03172AB8D700802F00 /* MMParallaxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMParallaxView.m; path = InfiniteParallaxScroll/MMParallaxView.m; sourceTree = SOURCE_ROOT; };
 		579F6FBB1726DB2F002E4C6C /* steve1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = steve1.jpg; path = InfiniteParallaxScroll/steve1.jpg; sourceTree = SOURCE_ROOT; };
@@ -140,6 +142,7 @@
 				579F6FE11726DB8E002E4C6C /* MMAppDelegate.m */,
 				579F6FE01726DB8E002E4C6C /* MMViewController.h */,
 				579F6FE41726DB8E002E4C6C /* MMViewController.m */,
+				579723BE1732A7AD00DE898A /* Storyboard_iPad.storyboard */,
 				579F6FE91726DBC2002E4C6C /* MainStoryboard.storyboard */,
 				579F6FF61726E0BC002E4C6C /* MMParallaxScroll */,
 				579245B817215909006CEFD4 /* Images */,
@@ -228,6 +231,7 @@
 				579F6FD71726DB3F002E4C6C /* gold.png in Resources */,
 				579F6FD81726DB3F002E4C6C /* rainbow.png in Resources */,
 				579F6FF31726DC2D002E4C6C /* InfoPlist.strings in Resources */,
+				579723BF1732A7AD00DE898A /* Storyboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +335,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfiniteParallaxScroll/InfiniteParallaxScroll-Prefix.pch";
 				INFOPLIST_FILE = "InfiniteParallaxScroll/InfiniteParallaxScroll-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = InfiniteParallaxScroll;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -342,7 +348,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InfiniteParallaxScroll/InfiniteParallaxScroll-Prefix.pch";
 				INFOPLIST_FILE = "InfiniteParallaxScroll/InfiniteParallaxScroll-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = InfiniteParallaxScroll;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -357,7 +365,7 @@
 				57A7D20D171F0F1D0014B777 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		57A7D20E171F0F1D0014B777 /* Build configuration list for PBXNativeTarget "InfiniteParallaxScroll" */ = {
 			isa = XCConfigurationList;
@@ -366,7 +374,7 @@
 				57A7D210171F0F1D0014B777 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
