@@ -68,7 +68,11 @@ enum MMInfiniteScrollDirection {
     
     self.scrollDirection = MMInfiniteScrollDirectionLeft;
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(scrollByTimer) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01
+                                                  target:self
+                                                selector:@selector(scrollByTimer)
+                                                userInfo:nil
+                                                 repeats:YES];
 }
 
 /*
@@ -86,7 +90,9 @@ enum MMInfiniteScrollDirection {
     if (self.scrollDirection == MMInfiniteScrollDirectionRight) {
         directionFactor = -1;
     }
-        [self.frontScrollView setContentOffset:CGPointMake((self.frontScrollView.contentOffset.x + (0.3 * directionFactor)), 0.0) animated:NO];
+        [self.frontScrollView setContentOffset:CGPointMake((self.frontScrollView.contentOffset.x + (0.3 * directionFactor)),
+                                                           self.frontScrollView.contentOffset.y)
+                                      animated:NO];
 }
 
 
@@ -110,8 +116,14 @@ enum MMInfiniteScrollDirection {
     }
     
     UILabel *label = (UILabel *)[scrollView viewWithTag:PARALLAX_VIEW_LABEL_TAG];
-    label.frame = CGRectMake(label.frame.origin.x + (difference * -1), label.frame.origin.y, label.frame.size.width, label.frame.size.height);
-    [self.backScrollView setContentOffset:CGPointMake((self.speedFactor * difference) + self.backScrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
+
+    label.frame = CGRectMake(label.frame.origin.x + (difference * -1),
+                             label.frame.origin.y,
+                             label.frame.size.width,
+                             label.frame.size.height);
+    [self.backScrollView setContentOffset:CGPointMake((self.backScrollView.contentOffset.x + (self.speedFactor * difference)),
+                                                      self.backScrollView.contentOffset.y)];
+    
 }
 
 #pragma mark - Proxy Methods

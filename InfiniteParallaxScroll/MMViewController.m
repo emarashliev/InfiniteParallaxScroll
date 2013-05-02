@@ -69,7 +69,7 @@
             
         } else {
             parallaxView.frame = CGRectMake(0, 0, infiniteScroll.frame.size.width, infiniteScroll.frame.size.height);
-            parallaxView.imageView.frame = CGRectMake(0, 0, infiniteScroll.frame.size.width, 100);
+            parallaxView.imageView.frame = CGRectMake(0, 0, infiniteScroll.frame.size.width, 500);
         }
         parallaxView.imageView.center = parallaxView.center;
     }
