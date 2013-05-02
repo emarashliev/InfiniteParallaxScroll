@@ -10,11 +10,21 @@
 #import "MMInfiniteScroll.h"
 #import "MMParallaxView.h"
 
-@interface MMParallaxScroll () 
+
+typedef NSInteger MMInfiniteScrollDirection;
+enum MMInfiniteScrollDirection {
+    MMInfiniteScrollDirectionRight,
+    MMInfiniteScrollDirectionLeft
+};
+
+
+@interface MMParallaxScroll ()
 
 @property (assign, nonatomic) CGFloat lastPosition;
 @property (strong, nonatomic) MMInfiniteScroll *frontScrollView;
 @property (strong, nonatomic) MMInfiniteScroll *backScrollView;
+@property (strong, nonatomic) NSTimer *timer;
+@property (assign, nonatomic) MMInfiniteScrollDirection scrollDirection;
 
 @end
 
@@ -54,7 +64,11 @@
     self.frontScrollView.isFrontScroll = YES;
     
     self.frontScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
-    self.backScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);    
+    self.backScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
+    
+    self.scrollDirection = MMInfiniteScrollDirectionLeft;
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(scrollByTimer) userInfo:nil repeats:YES];
 }
 
 /*
@@ -66,22 +80,38 @@
  }
  */
 
+- (void)scrollByTimer
+{
+    NSInteger directionFactor = 1;
+    if (self.scrollDirection == MMInfiniteScrollDirectionRight) {
+        directionFactor = -1;
+    }
+        [self.frontScrollView setContentOffset:CGPointMake((self.frontScrollView.contentOffset.x + (0.3 * directionFactor)), 0.0) animated:NO];
+}
+
 
 #pragma mark - UIScrollView Delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{    
-    CGFloat difference = self.frontScrollView.contentOffset.x - self.lastPosition;        
+{
+    CGFloat difference = self.frontScrollView.contentOffset.x - self.lastPosition;
+    CGFloat lastPosition = self.lastPosition;
     self.lastPosition = self.frontScrollView.contentOffset.x;
+
     
+  
     if (abs(difference) >= scrollView.contentSize.width / 4) {
         return;
     }
     
+    if (lastPosition > scrollView.contentOffset.x) {
+        self.scrollDirection = MMInfiniteScrollDirectionRight;
+    }else if (lastPosition < scrollView.contentOffset.x){
+        self.scrollDirection = MMInfiniteScrollDirectionLeft;
+    }
+    
     UILabel *label = (UILabel *)[scrollView viewWithTag:PARALLAX_VIEW_LABEL_TAG];
     label.frame = CGRectMake(label.frame.origin.x + (difference * -1), label.frame.origin.y, label.frame.size.width, label.frame.size.height);
-    
     [self.backScrollView setContentOffset:CGPointMake((self.speedFactor * difference) + self.backScrollView.contentOffset.x, self.backScrollView.contentOffset.y)];
-    
 }
 
 #pragma mark - Proxy Methods
