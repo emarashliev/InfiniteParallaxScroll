@@ -63,10 +63,8 @@
         parallaxView = [[MMParallaxView alloc] init];
     
         if (infiniteScroll.isFrontScroll) {
-            parallaxView.imageView.frame = CGRectMake(0, 0, 100, 100);
-            parallaxView.frame = CGRectMake(0, 0, infiniteScroll.frame.size.width, infiniteScroll.frame.size.height);
-//            parallaxView.textLabel.textColor = [UIColor whiteColor];
-            
+            parallaxView.imageView.frame = CGRectMake(0, 0, 300, 150);
+            parallaxView.frame = CGRectMake(0, 0, infiniteScroll.frame.size.width / 2, infiniteScroll.frame.size.height);            
         } else {
             parallaxView.frame = CGRectMake(0, 0, infiniteScroll.frame.size.width, infiniteScroll.frame.size.height);
             parallaxView.imageView.frame = CGRectMake(0, 0, infiniteScroll.frame.size.width, 500);
@@ -75,8 +73,7 @@
     }
 
     if (infiniteScroll.isFrontScroll) {
-        parallaxView.text = @"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.";
-        
+        parallaxView.text = @"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.";        
     }
     
     parallaxView.imageView.image = [UIImage imageNamed:imageName];

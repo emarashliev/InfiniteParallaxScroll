@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
-#define PARALLAX_VIEW_LABEL_TAG 11110
+#import "MMParallaxScroll.h"
 
 @interface MMParallaxView : UIView
 
 @property (strong, nonatomic) UILabel *textLabel;
 @property (strong, nonatomic) NSString *text;
 @property (strong, nonatomic) UIImageView *imageView;
+@property (assign, nonatomic) MMInfiniteScrollDirection scrollDirection;
+
 
 @end

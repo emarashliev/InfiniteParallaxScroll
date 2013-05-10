@@ -42,10 +42,13 @@
 {
     self.textLabel.text = _text;
     CGSize expectedSize = [_text sizeWithFont:_textLabel.font
-                            constrainedToSize:CGSizeMake(self.frame.size.width * 0.5, self.frame.size.height)
+                            constrainedToSize:CGSizeMake((self.frame.size.width * 0.5), self.frame.size.height)
                                 lineBreakMode:_textLabel.lineBreakMode];
     
-    CGFloat x = CGRectGetWidth(self.frame) - expectedSize.width;
+    CGFloat x = 0.0f;
+    if (self.scrollDirection == MMInfiniteScrollDirectionLeft) {
+        x = CGRectGetMaxX(self.imageView.frame);
+    }
     _textLabel.frame = CGRectMake(x, self.center.y, expectedSize.width, expectedSize.height);
     [_textLabel sizeToFit];
 }
@@ -57,7 +60,6 @@
         [self addSubview:_textLabel];
         _textLabel.backgroundColor = [UIColor clearColor];
         _textLabel.numberOfLines = 0;
-        _textLabel.tag = PARALLAX_VIEW_LABEL_TAG;
     }
     return _textLabel;
 }

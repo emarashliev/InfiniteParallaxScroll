@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MMInfiniteScroll.h"
 
+typedef NSInteger MMInfiniteScrollDirection;
+enum MMInfiniteScrollDirection {
+    MMInfiniteScrollDirectionRight = -1,
+    MMInfiniteScrollDirectionLeft  =  1
+};
+
 @interface MMParallaxScroll : UIView <UIScrollViewDelegate, MMInfiniteScrollDataSource>
 
 @property (assign, nonatomic) id<MMInfiniteScrollDataSource> dataSource;

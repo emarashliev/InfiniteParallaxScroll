@@ -10,12 +10,9 @@
 #import "MMInfiniteScroll.h"
 #import "MMParallaxView.h"
 
-
-typedef NSInteger MMInfiniteScrollDirection;
-enum MMInfiniteScrollDirection {
-    MMInfiniteScrollDirectionRight,
-    MMInfiniteScrollDirectionLeft
-};
+#define SCHEDUL_TIME_INTERVAL 2.0f/60.0f
+#define LABEL_SPEED_FACTOR 0.3
+#define AUTO_SCROLL_SPEED 1
 
 
 @interface MMParallaxScroll ()
@@ -67,8 +64,8 @@ enum MMInfiniteScrollDirection {
     self.backScrollView.contentSize = CGSizeMake(5000, self.frame.size.height);
     
     self.scrollDirection = MMInfiniteScrollDirectionLeft;
-    
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.01
+    [self scrollByTimer];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:SCHEDUL_TIME_INTERVAL
                                                   target:self
                                                 selector:@selector(scrollByTimer)
                                                 userInfo:nil
@@ -86,13 +83,9 @@ enum MMInfiniteScrollDirection {
 
 - (void)scrollByTimer
 {
-    NSInteger directionFactor = 1;
-    if (self.scrollDirection == MMInfiniteScrollDirectionRight) {
-        directionFactor = -1;
-    }
-        [self.frontScrollView setContentOffset:CGPointMake((self.frontScrollView.contentOffset.x + (0.3 * directionFactor)),
-                                                           self.frontScrollView.contentOffset.y)
-                                      animated:NO];
+    [self.frontScrollView setContentOffset:CGPointMake((self.frontScrollView.contentOffset.x + (AUTO_SCROLL_SPEED  * self.scrollDirection)),
+                                                       self.frontScrollView.contentOffset.y)
+                                  animated:NO];
 }
 
 
@@ -102,9 +95,7 @@ enum MMInfiniteScrollDirection {
     CGFloat difference = self.frontScrollView.contentOffset.x - self.lastPosition;
     CGFloat lastPosition = self.lastPosition;
     self.lastPosition = self.frontScrollView.contentOffset.x;
-
     
-  
     if (abs(difference) >= scrollView.contentSize.width / 4) {
         return;
     }
@@ -115,12 +106,17 @@ enum MMInfiniteScrollDirection {
         self.scrollDirection = MMInfiniteScrollDirectionLeft;
     }
     
-    UILabel *label = (UILabel *)[scrollView viewWithTag:PARALLAX_VIEW_LABEL_TAG];
-
-    label.frame = CGRectMake(label.frame.origin.x + (difference * -1),
-                             label.frame.origin.y,
-                             label.frame.size.width,
-                             label.frame.size.height);
+    NSArray *subviews = [[[scrollView subviews] objectAtIndex:0] subviews];
+    for (MMParallaxView *paralaxView in subviews) {
+        paralaxView.scrollDirection = self.scrollDirection;
+        UILabel *label = paralaxView.textLabel;
+        label.frame = CGRectMake(label.frame.origin.x - (difference * LABEL_SPEED_FACTOR),
+                                 label.frame.origin.y,
+                                 label.frame.size.width,
+                                 label.frame.size.height);
+    }
+    
+    
     [self.backScrollView setContentOffset:CGPointMake((self.backScrollView.contentOffset.x + (self.speedFactor * difference)),
                                                       self.backScrollView.contentOffset.y)];
     
